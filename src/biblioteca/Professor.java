@@ -8,18 +8,16 @@ public class Professor extends Usuario {
         this.departamento = departamento;
     }
 
-    // Sobrescrita do método abstrato
     @Override
     public int obterDiasDevolucao() {
         return 15;
     }
 
-    // Sobrescrita do método da interface
     @Override
     public void imprimirDados() {
         System.out.println("PROFESSOR | Nome: " + super.nome + " | Departamento: " + this.departamento);
-        if (this.getLivroAlugado() != null) {
-            System.out.println("  -> Possui livro alugado: " + this.getLivroAlugado().getTitulo());
+        if (this.getEmprestimoAtivo() != null) {
+            System.out.println("  -> Possui livro alugado: " + this.getEmprestimoAtivo().getLivro().getTitulo());
         } else {
             System.out.println("  -> Nenhum livro alugado no momento.");
         }

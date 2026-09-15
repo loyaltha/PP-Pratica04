@@ -4,20 +4,20 @@ public class Aluno extends Usuario {
     private int matricula;
 
     public Aluno(String nome, int matricula) {
-        super(nome); // Chama o construtor da superclasse
+        super(nome);
         this.matricula = matricula;
     }
 
-    // Sobrescrita do método abstrato
+    @Override
     public int obterDiasDevolucao() {
         return 7;
     }
 
-    // Sobrescrita do método da interface
+    @Override
     public void imprimirDados() {
         System.out.println("ALUNO | Nome: " + super.nome + " | Matrícula: " + this.matricula);
-        if (this.getLivroAlugado() != null) {
-            System.out.println("  -> Possui livro alugado: " + this.getLivroAlugado().getTitulo());
+        if (this.getEmprestimoAtivo() != null) {
+            System.out.println("  -> Possui livro alugado: " + this.getEmprestimoAtivo().getLivro().getTitulo());
         } else {
             System.out.println("  -> Nenhum livro alugado no momento.");
         }

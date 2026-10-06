@@ -1,7 +1,6 @@
 package biblioteca;
 
-public interface ItemEmprestavel {
-    String getTitulo();
+public interface ItemEmprestavel extends ItemAcervo{
     boolean getDisponivel();
     void setDisponivel(boolean status);
 }
